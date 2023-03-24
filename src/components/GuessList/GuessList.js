@@ -12,16 +12,10 @@ function GuessList({ guesses }) {
   return (
     <div className="guess-results">
       {guesses.map(({ id, word }) => (
-        <p className="guess" key={id}>
-          <Guess word={word} />
-        </p>
+        <Guess word={word} key={id} />
       ))}
       {emptyRows.length > 0
-        ? emptyRows.map((emptyRow) => (
-            <p className="guess" key={emptyRow}>
-              <Guess />
-            </p>
-          ))
+        ? emptyRows.map((emptyRow) => <Guess key={emptyRow} />)
         : null}
     </div>
   );

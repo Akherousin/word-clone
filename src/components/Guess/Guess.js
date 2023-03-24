@@ -8,20 +8,24 @@ function Guess({ word }) {
   }
   return (
     <>
-      {word &&
-        letters.map((letter, index) => (
-          <span className="cell" key={index}>
-            {letter}
-          </span>
-        ))}
+      {word && (
+        <p className="guess">
+          {letters.map((letter, index) => (
+            <span className="cell" key={index}>
+              {letter}
+            </span>
+          ))}
+        </p>
+      )}
       {!word && (
         <>
-          {' '}
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>{' '}
+          <p className="guess">
+            <span className="cell"></span>
+            <span className="cell"></span>
+            <span className="cell"></span>
+            <span className="cell"></span>
+            <span className="cell"></span>
+          </p>
         </>
       )}
     </>
