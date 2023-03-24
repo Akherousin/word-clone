@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Form({ addNewGuess }) {
+function Form({ addNewGuess, gameStatus }) {
   const [guess, setGuess] = useState('');
 
   const handleSubmit = (e) => {
@@ -14,6 +14,7 @@ function Form({ addNewGuess }) {
       <label htmlFor="guess-input">Enter guess:</label>
       <input
         required
+        disabled={gameStatus !== 'running'}
         id="guess-input"
         type="text"
         value={guess}
